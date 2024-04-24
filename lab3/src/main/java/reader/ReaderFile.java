@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author annamutovkina
  */
-public interface ReadFromFile {
+public interface ReaderFile {
 
     public ArrayList<Reactor> readFile(String path);
 }

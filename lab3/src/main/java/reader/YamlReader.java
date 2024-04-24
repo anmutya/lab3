@@ -27,7 +27,7 @@ import org.yaml.snakeyaml.Yaml;
  *
  * @author annamutovkina
  */
-public class YamlReader implements ReadFromFile{
+public class YamlReader implements ReaderFile{
     @Override
     public ArrayList<Reactor> readFile(String path) {
         ArrayList<Reactor> reactors = new ArrayList<>();

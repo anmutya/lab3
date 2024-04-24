@@ -21,7 +21,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
  *
  * @author annamutovkina
  */
-public class JsonReader implements ReadFromFile{
+public class JsonReader implements ReaderFile{
 
     @Override
     public ArrayList<Reactor> readFile(String path) {

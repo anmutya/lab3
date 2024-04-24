@@ -24,7 +24,7 @@ import javax.xml.stream.events.XMLEvent;
  *
  * @author annamutovkina
  */
-public class XmlReader implements ReadFromFile{
+public class XmlReader implements ReaderFile{
 
     @Override
     public ArrayList<Reactor> readFile(String path) {
