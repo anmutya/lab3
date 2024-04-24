@@ -23,8 +23,5 @@ public abstract class Handler {
     public void setNext(Handler next) {
         this.next = next;
     }
-    public ReactorStorage getStorage(){
-        return storage;
-    }
     public abstract void handleRequest(String path);
 }
