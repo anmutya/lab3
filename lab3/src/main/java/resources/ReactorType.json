@@ -1,7 +1,7 @@
 {
     "reactorList":[
     {
-        "class": "MKER",
+        "type": "MKER",
         "burnup": 30,
         "kpd": 0.352,
         "enrichment": 0.024,
@@ -11,7 +11,7 @@
         "first_load": 192
     },
     {
-        "class": "RBMK",
+        "type": "RBMK",
         "burnup": 25,
         "kpd": 0.3125,
         "enrichment": 0.027,
@@ -21,7 +21,7 @@
         "first_load": 192
     },
     {
-        "class": "VVER-1200",
+        "type": "VVER-1200",
         "burnup": 40,
         "kpd": 0.33,
         "enrichment": 0.0385,
@@ -31,7 +31,7 @@
         "first_load": 79.84
     },
     {
-        "class": "AP1000",
+        "type": "AP1000",
         "burnup": 43.2,
         "kpd": 0.339,
         "enrichment": 0.048,
@@ -41,7 +41,7 @@
         "first_load": 93.65
     },
     {
-        "class": "BWR",
+        "type": "BWR",
         "burnup": 45,
         "kpd": 0.343,
         "enrichment": 0.041,
@@ -51,7 +51,7 @@
         "first_load": 128
     },
     {
-        "class": "ABWR",
+        "type": "ABWR",
         "burnup": 46.4,
         "kpd": 0.3655,
         "enrichment": 0.036,
@@ -61,7 +61,7 @@
         "first_load": 128
     },
     {
-        "class": "EPR",
+        "type": "EPR",
         "burnup": 36.1,
         "kpd": 0.3515,
         "enrichment": 0.032,
@@ -71,7 +71,7 @@
         "first_load": 140.66
     },
     {
-        "class": "MAGNOX",
+        "type": "MAGNOX",
         "burnup": 4.5,
         "kpd": 0.23,
         "enrichment": 0.01,
@@ -81,7 +81,7 @@
         "first_load": 120
     },
     {
-        "class": "BN",
+        "type": "BN",
         "burnup": 140,
         "kpd": 42.05,
         "enrichment": 0.21,
@@ -91,7 +91,7 @@
         "first_load": 50.4
     },
     {
-        "class": "PWR",
+        "type": "PWR",
         "burnup": 42,
         "kpd": 34,
         "enrichment": 0.045,
@@ -101,7 +101,7 @@
         "first_load": 74
     },
     {
-        "class": "CPR-1000",
+        "type": "CPR-1000",
         "burnup": 52,
         "kpd": 35.1,
         "enrichment": 0.045,
@@ -111,7 +111,7 @@
         "first_load": 77
     },
     {
-        "class": "CANDU",
+        "type": "CANDU",
         "burnup": 8,
         "kpd": 0.3,
         "enrichment": 0.0071,
@@ -121,7 +121,7 @@
         "first_load": 38.9
     },
     {
-        "class": "PHWR",
+        "type": "PHWR",
         "burnup": 8,
         "kpd": 0.3,
         "enrichment": 0.0071,
@@ -131,7 +131,7 @@
         "first_load": 38.9
     },
     {
-        "class": "KLT-40",
+        "type": "KLT-40",
         "burnup": 42,
         "kpd": 0.3,
         "enrichment": 0.16,
@@ -141,7 +141,7 @@
         "first_load": 0.007
     },
     {
-        "class": "PWR_TEST",
+        "type": "PWR_TEST",
         "burnup": 40,
         "kpd": 0.33,
         "enrichment": 0.044,

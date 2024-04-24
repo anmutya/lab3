@@ -2,7 +2,7 @@
 
 <Reactors>
 	<Reactor>
-		<class>MKER</class>
+		<type>MKER</type>
             	<burnup>30</burnup>
             	<kpd>0.352</kpd>
             	<enrichment>0.024</enrichment>
@@ -12,7 +12,7 @@
             	<first_load>192</first_load>
 	</Reactor>
 	<Reactor>
-		<class>RBMK</class>
+		<type>RBMK</type>
             	<burnup>25</burnup>
             	<kpd>0.3125</kpd>
             	<enrichment>0.027</enrichment>
@@ -22,7 +22,7 @@
             	<first_load>192</first_load>
 	</Reactor>
 	<Reactor>
-		<class>VVER-1200</class>
+		<type>VVER-1200</type>
             	<burnup>40</burnup>
             	<kpd>0.33</kpd>
             	<enrichment>0.0385</enrichment>
@@ -32,7 +32,7 @@
             	<first_load>79.84</first_load>
 	</Reactor>
 	<Reactor>
-		<class>AP1000</class>
+		<type>AP1000</type>
             	<burnup>43.20</burnup>
             	<kpd>0.339</kpd>
             	<enrichment>0.048</enrichment>
@@ -42,7 +42,7 @@
             	<first_load>93.65</first_load>
 	</Reactor>
 	<Reactor>
-		<class>BWR</class>
+		<type>BWR</type>
             	<burnup>45</burnup>
             	<kpd>0.343</kpd>
             	<enrichment>0.041</enrichment>
@@ -52,7 +52,7 @@
             	<first_load>128.00</first_load>
 	</Reactor>
 	<Reactor>
-		<class>ABWR</class>
+		<type>ABWR</type>
             	<burnup>46.40</burnup>
             	<kpd>0.3655</kpd>
             	<enrichment>0.036</enrichment>
@@ -62,7 +62,7 @@
             	<first_load>128.00</first_load>
 	</Reactor>
 	<Reactor>
-		<class>EPR</class>
+		<type>EPR</type>
             	<burnup>36.10</burnup>
             	<kpd>0.3515</kpd>
             	<enrichment>0.032</enrichment>
@@ -72,7 +72,7 @@
             	<first_load>140.66</first_load>
 	</Reactor>
 	<Reactor>
-		<class>MAGNOX</class>
+		<type>MAGNOX</type>
             	<burnup>4.5</burnup>
             	<kpd>0.23</kpd>
             	<enrichment>0.01</enrichment>
@@ -82,7 +82,7 @@
             	<first_load>120</first_load>
 	</Reactor>
 	<Reactor>
-		<class>BN</class>
+		<type>BN</type>
             	<burnup>140</burnup>
             	<kpd>42.05</kpd>
             	<enrichment>0.21</enrichment>
@@ -92,7 +92,7 @@
             	<first_load>50.4</first_load>
 	</Reactor>
 	<Reactor>
-		<class>PWR</class>
+		<type>PWR</type>
             	<burnup>42.0</burnup>
             	<kpd>34.0</kpd>
             	<enrichment>0.045</enrichment>
@@ -102,7 +102,7 @@
             	<first_load>74.0</first_load>
 	</Reactor>
 	<Reactor>
-		<class>CPR-1000</class>
+		<type>CPR-1000</type>
             	<burnup>52.0</burnup>
             	<kpd>35.1</kpd>
             	<enrichment>0.045</enrichment>
@@ -112,7 +112,7 @@
             	<first_load>77.0</first_load>
 	</Reactor>
 	<Reactor>
-		<class>CANDU</class>
+		<type>CANDU</type>
             	<burnup>8</burnup>
             	<kpd>0.30</kpd>
             	<enrichment>0.0071</enrichment>
@@ -122,7 +122,7 @@
             	<first_load>38.9</first_load>
 	</Reactor>
 	<Reactor>
-		<class>PHWR</class>
+		<type>PHWR</type>
             	<burnup>8</burnup>
             	<kpd>0.30</kpd>
             	<enrichment>0.0071</enrichment>
@@ -132,7 +132,7 @@
             	<first_load>38.9</first_load>
 	</Reactor>
 	<Reactor>
-		<class>KLT-40</class>
+		<type>KLT-40</type>
             	<burnup>42</burnup>
             	<kpd>0.30</kpd>
             	<enrichment>0.16</enrichment>
@@ -142,7 +142,7 @@
             	<first_load>0.007</first_load>
 	</Reactor>
 	<Reactor>
-		<class>PWR_TEST</class>
+		<type>PWR_TEST</type>
             	<burnup>40</burnup>
             	<kpd>0.33</kpd>
             	<enrichment>0.044</enrichment>
