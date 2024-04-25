@@ -39,6 +39,7 @@ public class XmlReader implements ReaderFile{
                     if (elementName.equals("Reactor")) {
                         reactor = new Reactor();
                     } else if (reactor != null) {
+                        reactor.setSource("xml");
                         if (elementName.equals("type")) {
                             xmlEvent = reader.nextEvent();
                             reactor.setType(xmlEvent.asCharacters().getData());

@@ -13,7 +13,6 @@ import java.util.HashMap;
  */
 public enum ReactorStorage {
     INSTANCE;
-    private String source;
     private HashMap<String, ArrayList<Reactor>> reactorsMap = new HashMap<>();
 
     public ArrayList<Reactor> getReactors(String source) {

@@ -34,6 +34,9 @@ public class JsonReader implements ReaderFile{
     } catch (IOException ex) {
         Logger.getLogger(JsonReader.class.getName()).log(Level.SEVERE, null, ex);
     }
+    for(Reactor r: reactors){
+        r.setSource("json");
+    }
     return reactors;
     }
 

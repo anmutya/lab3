@@ -17,6 +17,7 @@ public class Reactor {
     private double electrical_capacity;
     private int life_time;
     private double first_load;
+    private String source;
     public Reactor() {
     }
     public Reactor(String type, double burnup, double kpd, double enrichment, int thermal_capacity, double electrical_capacity, int life_time, double first_load) {
@@ -64,6 +65,9 @@ public class Reactor {
     }
     public void setEnrichment(double enrichment) {
         this.enrichment = enrichment;
+    }
+    public void setSource(String source){
+        this.source = source;
     }
     public void setThermal_capacity(int thermal_capacity) {
         this.thermal_capacity = thermal_capacity;

@@ -43,6 +43,7 @@ public class YamlReader implements ReaderFile{
                                 Double.parseDouble(String.valueOf(data.get("electrical_capacity"))),
                                 Integer.parseInt(String.valueOf(data.get("life_time"))),
                                 Double.parseDouble(String.valueOf(data.get("first_load"))));
+                        reactor.setSource("yaml");
                         reactors.add(reactor);
                     } 
             }
