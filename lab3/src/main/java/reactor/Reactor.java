@@ -17,7 +17,7 @@ public class Reactor {
     private double electrical_capacity;
     private int life_time;
     private double first_load;
-      public Reactor() {
+    public Reactor() {
     }
     public Reactor(String type, double burnup, double kpd, double enrichment, int thermal_capacity, double electrical_capacity, int life_time, double first_load) {
         this.type = type;

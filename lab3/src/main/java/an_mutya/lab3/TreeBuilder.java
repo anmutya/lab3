@@ -8,7 +8,6 @@ import reactor.ReactorStorage;
 import reactor.Reactor;
 import java.util.ArrayList;
 import java.util.Map;
-import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
@@ -17,7 +16,6 @@ import javax.swing.tree.DefaultMutableTreeNode;
  */
 public class TreeBuilder {
     private DefaultMutableTreeNode rootTree;
-    private JTree tree;
 
    public DefaultMutableTreeNode buildTreeData() {
         this.rootTree = new DefaultMutableTreeNode("Reactors");

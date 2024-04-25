@@ -7,6 +7,9 @@ package an_mutya.lab3;
 
 import handlerAndManager.Manager;
 import java.io.File;
+import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -18,7 +21,7 @@ import javax.swing.tree.DefaultTreeModel;
  * @author annamutovkina
  */
 public class MainFrame extends javax.swing.JFrame {
-    Manager manager = new Manager();
+    private Manager manager = new Manager();
     /**
      * Creates new form MainFrame
      */
@@ -164,16 +167,21 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonLoadFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoadFileActionPerformed
-         JFileChooser jFileChooser = new JFileChooser();
-            jFileChooser.setCurrentDirectory(new File("."));
+        try {
+            JFileChooser jFileChooser = new JFileChooser();
+            File currentDirectory = new File(getClass().getProtectionDomain().getCodeSource().getLocation().toURI().getPath()).getParentFile();
+            jFileChooser.setCurrentDirectory(currentDirectory);
             int resonse = jFileChooser.showOpenDialog(null);
             if(resonse == 0){
-            try {
-                manager.loadFile(jFileChooser.getSelectedFile().getAbsolutePath());
-                textAddedFiles.append(jFileChooser.getSelectedFile().getAbsolutePath() + "\n");
-            } catch (NullPointerException ex) {
-                JOptionPane.showMessageDialog(null, "Импортируйте правильный файл!\nНе умею с таким работать", "Алло!", JOptionPane.INFORMATION_MESSAGE);
+                try {
+                    manager.loadFile(jFileChooser.getSelectedFile().getAbsolutePath());
+                    textAddedFiles.append(jFileChooser.getSelectedFile().getAbsolutePath() + "\n");
+                } catch (NullPointerException ex) {
+                    JOptionPane.showMessageDialog(null, "Импортируйте правильный файл!\nНе умею с таким работать", "Алло!", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_buttonLoadFileActionPerformed
 

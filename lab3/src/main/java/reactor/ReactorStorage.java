@@ -13,7 +13,8 @@ import java.util.HashMap;
  */
 public enum ReactorStorage {
     INSTANCE;
-    HashMap<String, ArrayList<Reactor>> reactorsMap = new HashMap<>();
+    private String source;
+    private HashMap<String, ArrayList<Reactor>> reactorsMap = new HashMap<>();
 
     public ArrayList<Reactor> getReactors(String source) {
         return reactorsMap.get(source);
@@ -27,5 +28,6 @@ public enum ReactorStorage {
     public void clearReactors(){
         this.reactorsMap.clear();
     }
+    
    
 }
