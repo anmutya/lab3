@@ -85,7 +85,7 @@ public class Reactor {
     public String toString() {
         return "burnup=" + burnup + ", kpd=" + kpd + ", enrichment=" + 
                 enrichment + ", thermal_capacity=" + thermal_capacity + ", electrical_capacity=" + electrical_capacity +
-                ", life_time=" + life_time + ", first_load=" + first_load;
+                ", life_time=" + life_time + ", first_load=" + first_load+ ", source= "+ source;
     }
 
 }
