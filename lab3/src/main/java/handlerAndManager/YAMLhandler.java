@@ -4,13 +4,15 @@
  */
 package handlerAndManager;
 
+import reader.YamlReader;
+
 
 /**
  *
  * @author annamutovkina
  */
 public class YAMLhandler extends Handler{
-
+    private YamlReader yaml = new YamlReader();
     @Override
     public void handleRequest(String path) {
         if(path.endsWith(".yaml")){

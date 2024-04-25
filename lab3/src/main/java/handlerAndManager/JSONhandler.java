@@ -4,11 +4,14 @@
  */
 package handlerAndManager;
 
+import reader.JsonReader;
+
 /**
  *
  * @author annamutovkina
  */
 public class JSONhandler extends Handler{
+    private JsonReader json = new JsonReader();
     @Override
     public void handleRequest(String path) {
         if(path.endsWith(".json")){

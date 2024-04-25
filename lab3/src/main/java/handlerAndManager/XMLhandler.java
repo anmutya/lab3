@@ -4,11 +4,14 @@
  */
 package handlerAndManager;
 
+import reader.XmlReader;
+
 /**
  *
  * @author annamutovkina
  */
 public class XMLhandler extends Handler{
+    private XmlReader xml = new XmlReader();
     @Override
     public void handleRequest(String path) {
         if(path.endsWith(".xml")){

@@ -4,19 +4,13 @@
  */
 package handlerAndManager;
 
-import reader.JsonReader;
 import reactor.ReactorStorage;
-import reader.XmlReader;
-import reader.YamlReader;
 
 /**
  *
  * @author annamutovkina
  */
 public abstract class Handler {
-    protected YamlReader yaml = new YamlReader();
-    protected JsonReader json = new JsonReader();
-    protected XmlReader xml = new XmlReader();
     protected ReactorStorage storage = ReactorStorage.INSTANCE;
     protected Handler next;
 
