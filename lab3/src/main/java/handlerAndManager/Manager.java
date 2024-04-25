@@ -7,6 +7,9 @@ package handlerAndManager;
 import an_mutya.lab3.TreeBuilder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import reactor.ReactorStorage;
+import reader.JsonReader;
+import reader.XmlReader;
+import reader.YamlReader;
 
 /**
  *
@@ -14,9 +17,9 @@ import reactor.ReactorStorage;
  */
 public class Manager {
     public void loadFile(String path){
-        YAMLhandler yAMLhandler = new YAMLhandler();
-        JSONhandler jSONhandler = new JSONhandler();
-        XMLhandler xMLhandler = new XMLhandler();
+        YAMLhandler yAMLhandler = new YAMLhandler(new YamlReader());
+        JSONhandler jSONhandler = new JSONhandler(new JsonReader());
+        XMLhandler xMLhandler = new XMLhandler(new XmlReader());
         yAMLhandler.setNext(jSONhandler);
         jSONhandler.setNext(xMLhandler);
         yAMLhandler.handleRequest(path);

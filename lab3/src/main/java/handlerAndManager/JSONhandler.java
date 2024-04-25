@@ -5,17 +5,21 @@
 package handlerAndManager;
 
 import reader.JsonReader;
+import reader.ReaderFile;
 
 /**
  *
  * @author annamutovkina
  */
 public class JSONhandler extends Handler{
-    private JsonReader json = new JsonReader();
+
+    public JSONhandler(ReaderFile reader) {
+        super(reader);
+    }
     @Override
     public void handleRequest(String path) {
         if(path.endsWith(".json")){
-           storage.setReactors("json", json.readFile(path));
+           storage.setReactors("json", readerFile.readFile(path));
         }
         else{
             next.handleRequest(path);

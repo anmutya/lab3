@@ -4,6 +4,7 @@
  */
 package handlerAndManager;
 
+import reader.ReaderFile;
 import reader.YamlReader;
 
 
@@ -12,11 +13,14 @@ import reader.YamlReader;
  * @author annamutovkina
  */
 public class YAMLhandler extends Handler{
-    private YamlReader yaml = new YamlReader();
+
+    public YAMLhandler(ReaderFile reader) {
+        super(reader);
+    }
     @Override
     public void handleRequest(String path) {
         if(path.endsWith(".yaml")){
-          storage.setReactors("yaml", yaml.readFile(path));
+          storage.setReactors("yaml", readerFile.readFile(path));
         }
         else{
             next.handleRequest(path);

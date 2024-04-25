@@ -5,6 +5,7 @@
 package handlerAndManager;
 
 import reactor.ReactorStorage;
+import reader.ReaderFile;
 
 /**
  *
@@ -13,6 +14,12 @@ import reactor.ReactorStorage;
 public abstract class Handler {
     protected ReactorStorage storage = ReactorStorage.INSTANCE;
     protected Handler next;
+    protected ReaderFile readerFile;
+
+    public Handler(ReaderFile reader) {
+        this.readerFile = reader;
+    }
+    
 
     public void setNext(Handler next) {
         this.next = next;

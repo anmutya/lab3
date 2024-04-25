@@ -4,6 +4,7 @@
  */
 package handlerAndManager;
 
+import reader.ReaderFile;
 import reader.XmlReader;
 
 /**
@@ -11,11 +12,14 @@ import reader.XmlReader;
  * @author annamutovkina
  */
 public class XMLhandler extends Handler{
-    private XmlReader xml = new XmlReader();
+
+    public XMLhandler(ReaderFile reader) {
+        super(reader);
+    }
     @Override
     public void handleRequest(String path) {
         if(path.endsWith(".xml")){
-           storage.setReactors("xml", xml.readFile(path));
+           storage.setReactors("xml", readerFile.readFile(path));
         }
         else{
             next.handleRequest(path);
