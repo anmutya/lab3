@@ -3,6 +3,7 @@ package an_mutya.lab3;
 import entities.*;
 import org.springframework.stereotype.Service;
 import reactor.Reactor;
+import reactor.ReactorStorage;
 import reader.JsonReader;
 
 import javax.xml.crypto.Data;
@@ -19,10 +20,13 @@ public class ReactorService {
     }
 
     private double findBurnup(Reactors reactors) {
-        JsonReader jsonReader = new JsonReader();
+        HashMap<String, ArrayList<Reactor>> reactorStorage = ReactorStorage.INSTANCE.getReactors();
+        Set<String> keySet = reactorStorage.keySet();
+        String keyAtIndex0 = (String) keySet.toArray()[0]; // Получаем ключ по индексу 0
+
+        ArrayList<Reactor> reactorListAtIndex0 = reactorStorage.get(keyAtIndex0);
         double burnup = 0;
-        ArrayList<Reactor> reactorStorage = jsonReader.readFile();
-        for (Reactor reactor : reactorStorage) {
+        for (Reactor reactor : reactorListAtIndex0) {
             if (Objects.equals(reactor.getType(), reactors.getType())) {
                 burnup = reactor.getBurnup();
             } else if (Objects.equals(reactors.getType(), "LWGR") && Objects.equals(reactor.getType(), "RBMK")) {
@@ -37,10 +41,13 @@ public class ReactorService {
     }
 
     private double findFirstLoad(Reactors reactors) {
-        JsonReader jsonReader = new JsonReader();
         double firstLoad = 0;
-        ArrayList<Reactor> reactorStorage = jsonReader.readFile();
-        for (Reactor reactor : reactorStorage) {
+        HashMap<String, ArrayList<Reactor>> reactorStorage = ReactorStorage.INSTANCE.getReactors();
+        Set<String> keySet = reactorStorage.keySet();
+        String keyAtIndex0 = (String) keySet.toArray()[0]; // Получаем ключ по индексу 0
+
+        ArrayList<Reactor> reactorListAtIndex0 = reactorStorage.get(keyAtIndex0);
+        for (Reactor reactor : reactorListAtIndex0) {
             if (Objects.equals(reactor.getType(), reactors.getType())) {
                 firstLoad = reactor.getFirstLoad();
             } else if (Objects.equals(reactors.getType(), "LWGR") && Objects.equals(reactor.getType(), "RBMK")) {
