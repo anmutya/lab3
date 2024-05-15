@@ -1,12 +1,12 @@
-package an_mutya.lab3;
+package entityForDataBase;
 
-import entyties.Countries;
-import entyties.Kium;
-import entyties.Operators;
-import entyties.Owners;
-import entyties.Reactors;
-import entyties.Regions;
-import entyties.Status;
+import entities.Countries;
+import entities.Kium;
+import entities.Operators;
+import entities.Owners;
+import entities.Reactors;
+import entities.Regions;
+import entities.Status;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -24,11 +24,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author annamutovkina
  */
-public class CreateEntitiesForDB {
+public class ReadEntitiesForDB {
 
-    private String path = "/Users/annamutovkina/Downloads/reactors_details.xlsx";
+    private String path = getClass().getClassLoader().getResource("reactors_details.xlsx").getPath();
 
-    public ArrayList<Reactors> createReactors() throws IOException {
+    public ArrayList<Reactors> readReactorsForExcel() throws IOException {
         ArrayList<Reactors> reactors = new ArrayList<>();
         String nameSheet = "reactor";
         DataFormatter formatter = new DataFormatter();
@@ -45,19 +45,19 @@ public class CreateEntitiesForDB {
                 int statusId = (int) (row.getCell(4).getNumericCellValue());
                 if (statusId != 0) {
                     Status status = new Status();
-                    status.setId(statusId);
+                    status.setId(Integer.valueOf(statusId));
                     reactor.setStatus(status);
                 }
                 int ownerId = (int) (row.getCell(5).getNumericCellValue());
                 if (ownerId != 0) {
                     Owners owner = new Owners();
-                    owner.setId(ownerId);
+                    owner.setId(Integer.valueOf(ownerId));
                     reactor.setOwner(owner);
                 }
                 int operatorId = (int) (row.getCell(6).getNumericCellValue());
                 if (operatorId != 0) {
                     Operators operator = new Operators();
-                    operator.setId(operatorId);
+                    operator.setId(Integer.valueOf(operatorId));
                     reactor.setOperator(operator);
                 }
                 cellValue = formatter.formatCellValue(row.getCell(7));
@@ -68,7 +68,7 @@ public class CreateEntitiesForDB {
                 int countryId = (int) (row.getCell(10).getNumericCellValue());
                 if (countryId != 0) {
                     Countries country = new Countries();
-                    country.setId(countryId);
+                    country.setId(Integer.valueOf(countryId));
                     reactor.setCountry(country);
                 }
                 reactors.add(reactor);
@@ -79,7 +79,7 @@ public class CreateEntitiesForDB {
 
     }
 
-    public ArrayList<Operators> createOperators() {
+    public ArrayList<Operators> readOperatorsForExcel() {
         ArrayList<Operators> operatorses = new ArrayList();
         String nameSheet = "operators";
         try (XSSFWorkbook myExcelFWorkbook = new XSSFWorkbook(path)) {
@@ -95,12 +95,12 @@ public class CreateEntitiesForDB {
             }
             myExcelFWorkbook.close();
         } catch (IOException ex) {
-            Logger.getLogger(CreateEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return operatorses;
     }
 
-    public ArrayList<Owners> createOwners() {
+    public ArrayList<Owners> readOwnersForExcel() {
         ArrayList<Owners> owners = new ArrayList();
         String nameSheet = "owners";
         try (XSSFWorkbook myExcelFWorkbook = new XSSFWorkbook(path)) {
@@ -116,12 +116,12 @@ public class CreateEntitiesForDB {
             }
             myExcelFWorkbook.close();
         } catch (IOException ex) {
-            Logger.getLogger(CreateEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return owners;
     }
 
-    public ArrayList<Regions> createRegions() {
+    public ArrayList<Regions> readRegionsForExcel() {
         ArrayList<Regions> regions = new ArrayList();
         String nameSheet = "regions";
         try (XSSFWorkbook myExcelFWorkbook = new XSSFWorkbook(path)) {
@@ -137,12 +137,12 @@ public class CreateEntitiesForDB {
             }
             myExcelFWorkbook.close();
         } catch (IOException ex) {
-            Logger.getLogger(CreateEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return regions;
     }
 
-    public ArrayList<Countries> createCountries() {
+    public ArrayList<Countries> readCountriesForExcel() {
         ArrayList<Countries> countries = new ArrayList();
         String nameSheet = "countries";
         try (XSSFWorkbook myExcelFWorkbook = new XSSFWorkbook(path)) {
@@ -156,7 +156,7 @@ public class CreateEntitiesForDB {
                 int regionId = (int) (row.getCell(1).getNumericCellValue());
                 if (regionId != 0) {
                     Regions region = new Regions();
-                    region.setId(regionId);
+                    region.setId(Integer.valueOf(regionId));
                     country.setRegion(region);
                 }
                 country.setName(row.getCell(2).getStringCellValue());
@@ -164,12 +164,12 @@ public class CreateEntitiesForDB {
             }
             myExcelFWorkbook.close();
         } catch (IOException ex) {
-            Logger.getLogger(CreateEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return countries;
     }
 
-    public ArrayList<Status> createStatus() {
+    public ArrayList<Status> readStatusForExcel() {
         ArrayList<Status> statuses = new ArrayList();
         String nameSheet = "status";
         try (XSSFWorkbook myExcelFWorkbook = new XSSFWorkbook(path)) {
@@ -185,12 +185,12 @@ public class CreateEntitiesForDB {
             }
             myExcelFWorkbook.close();
         } catch (IOException ex) {
-            Logger.getLogger(CreateEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return statuses;
     }
 
-    public ArrayList<Kium> createKium() {
+    public ArrayList<Kium> readKiumForExcel() {
         ArrayList<Kium> kiums = new ArrayList();
         String nameSheet = "kium";
         try (XSSFWorkbook myExcelFWorkbook = new XSSFWorkbook(path)) {
@@ -202,19 +202,19 @@ public class CreateEntitiesForDB {
                 int reactorId = (int) (row.getCell(0).getNumericCellValue());
                 if (reactorId != 0) {
                     Reactors reactor = new Reactors();
-                    reactor.setId(reactorId);
+                    reactor.setId(Integer.valueOf(reactorId));
                     kium.setReactor(reactor);
                 }
                 String cellValue = formatter.formatCellValue(row.getCell(1));
                 kium.setYear(Integer.valueOf(cellValue));
                 if ((int)row.getCell(2).getNumericCellValue() != 0) {
-                    kium.setLoadFactor(row.getCell(2).getNumericCellValue());
+                    kium.setLoadFactor(Double.valueOf(row.getCell(2).getNumericCellValue()));
                 }
                 kiums.add(kium);
             }
             myExcelFWorkbook.close();
         } catch (IOException ex) {
-            Logger.getLogger(CreateEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadEntitiesForDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return kiums;
     }

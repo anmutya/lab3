@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package entyties;
+package entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,6 +22,11 @@ public class Owners {
     private Integer id;
     @Column(name = "name")
     private String name;
+
+    public List<Reactors> getReactors() {
+        return reactors;
+    }
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
     private List<Reactors> reactors;
 
